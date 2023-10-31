@@ -171,6 +171,28 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                     ),
+                    ElevatedButton(
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Número Confirmado'),
+                              content: Text('El número es: $cardNumber'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Cerrar'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Text('Confirmar'),
+                    ),
                   ],
                 ),
               ),
