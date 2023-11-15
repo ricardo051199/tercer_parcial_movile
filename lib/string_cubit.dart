@@ -1,16 +1,15 @@
 import 'package:bloc/bloc.dart';
-import 'package:tercer_parcial/string_state.dart';
 
-class StringCubit extends Cubit<StringState> {
-  int counter = 0;
-  StringCubit() : super(StringLoading());
+class IntCubit extends Cubit<int> {
+  IntCubit() : super(0);
 
   void addData() {
-    counter = counter + 1;
-    emit(StringNew(data: counter.toString()));
+    emit(state + 1);
   }
+
   void removeData() {
-    counter = counter - 1;
-    emit(StringNew(data: counter.toString()));
+    if (state > 0) {
+      emit(state - 1);
+    }
   }
 }

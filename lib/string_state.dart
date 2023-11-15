@@ -1,5 +1,7 @@
 class StringState {
   StringState();
+
+  get data => null;
 }
 
 class StringLoading extends StringState {
